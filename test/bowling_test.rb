@@ -49,14 +49,14 @@ class BowlingGameTest < MiniTest::Unit::TestCase
     end
   end
 
-  def test_simple_rolls_populate_correctly
-    3.times do |v|
-      @game.roll(v)
-    end
-    assert_equal(0, @game.frames[0][0], "expected roll 1 to be 0")
-    assert_equal(1, @game.frames[0][1], "expected roll 2 to be 1")
-    assert_equal(2, @game.frames[1][0], "expected roll 3 to be 2")
-  end
+  # def test_simple_rolls_populate_correctly
+  #   3.times do |v|
+  #     @game.roll(v)
+  #   end
+  #   assert_equal(0, @game.frames[0][0], "expected roll 1 to be 0")
+  #   assert_equal(1, @game.frames[0][1], "expected roll 2 to be 1")
+  #   assert_equal(2, @game.frames[1][0], "expected roll 3 to be 2")
+  # end
 
   def test_spare_in_frame_one_gutter_frame_two
     2.times do |i|
@@ -81,16 +81,16 @@ class BowlingGameTest < MiniTest::Unit::TestCase
     assert_equal(29, @game.score, "bowling score wrong for spare in first frame and all ones after")
   end
 
-  def test_spare_in_last_frame_gives_three_balls
-    (1..9).each do |roll|
-      @game.roll(1)
-      @game.roll(1)
-    end
-    @game.roll(5)
-    @game.roll(5)
-    @game.roll(5)
-    assert_equal(3, @game.frames.last.length, "last frame should have 3 balls if first two are a spare")
-  end
+  # def test_spare_in_last_frame_gives_three_balls
+  #   (1..9).each do |roll|
+  #     @game.roll(1)
+  #     @game.roll(1)
+  #   end
+  #   @game.roll(5)
+  #   @game.roll(5)
+  #   @game.roll(5)
+  #   assert_equal(3, @game.frames.last.length, "last frame should have 3 balls if first two are a spare")
+  # end
 
   def test_strike_in_frame_one_ones_in_all_other_frames
     @game.roll(10)
